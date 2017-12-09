@@ -1,0 +1,25 @@
+requisitos:
+    -Python >= 3.4
+    -Beutiful Soup
+        $apt-get install python3-bs4
+        ó
+        $pip3 install beutifulsoup4
+
+Como usar:
+
+1)  Ejecutar:
+        $python3 walk.py
+    para crear las bases de documentos en archivos xml ordenadas por años.
+    Este programa utiliza el actual esquema de ordenamiento de carpeta, por lo
+    que no se recomienda modifcar la actual estructura.
+
+2)  Ejecutar:
+        $python3 indexador.py -base nombre_archivo
+    para crear el indice de las palabras para la base "nombre_archivo".
+    la base debe estar contenida en la carpeta "bases/". El indice generado se guarda
+    en la carpeta "indices/"
+
+3)  Ejecutar:
+        $python3 query.py -base nombre_archivo -index nombre_index
+    para realizar consultas sobre una base usando el indice generado en el paso anterior.
+    arroja como resultado el id del documento y su ranking.

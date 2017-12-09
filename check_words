@@ -1,0 +1,41 @@
+from xml.etree.ElementTree import Element, SubElement, Comment, tostring, ElementTree
+from unidecode import unidecode
+
+texts = 0
+
+dic = open('diccionario.txt', 'r', encoding='latin1')
+base = open('bases/2001.xml', 'r')
+
+tree = ElementTree()
+tree.parse(base)
+base.close()
+
+
+# Iterar Documentos
+doc_dic = []
+root = tree.getroot()
+
+for doc in root:
+	if texts == 2000:
+		break
+	print("doc {}...{}".format(texts, doc.get('url')))
+	texts = texts + 1
+	text = doc.find('content').text
+	text = text.casefold()
+	text = text.split()
+	for word in text:
+		if word not in doc_dic:
+			doc_dic.append(word)
+
+print(doc_dic)
+print(doc_dic.__len__())
+
+# Leer Diccionario
+
+
+words = dic.read().splitlines()
+for word in words:
+	if word not in doc_dic:
+		doc_dic.append(word)
+
+print(doc_dic.__len__())

@@ -1,0 +1,29 @@
+<base>
+    <document id="1" url="doc0">
+        <year>2017</year>
+        <month>01</month>
+        <date>25</date>
+        <content>
+            hola mundo
+            mundo chao mundo
+        </content>
+    </document>
+    <document id="2" url="doc1">
+        <year>2017</year>
+        <month>01</month>
+        <date>25</date>
+        <content>
+            hola chao
+            hola
+        </content>
+    </document>
+    <document id="3" url="doc3">
+        <year>2017</year>
+        <month>01</month>
+        <date>25</date>
+        <content>
+            casa arbol casa
+        </content>
+    </document>
+
+</base>
